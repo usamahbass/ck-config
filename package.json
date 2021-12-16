@@ -39,7 +39,6 @@
     "@ckeditor/ckeditor5-theme-lark": "^31.1.0",
     "@ckeditor/ckeditor5-typing": "^31.1.0",
     "@ckeditor/ckeditor5-upload": "^31.1.0",
-    "@ckeditor/ckeditor5-watchdog": "^31.1.0",
     "@ckeditor/ckeditor5-word-count": "^31.1.0",
     "css-loader": "^5.2.7",
     "postcss": "^8.4.4",
