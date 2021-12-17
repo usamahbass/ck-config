@@ -2,18 +2,19 @@
  * @license Copyright (c) 2014-2021, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
+
 import ClassicEditor from "@ckeditor/ckeditor5-editor-classic/src/classiceditor.js";
+
 import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
-import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
+import UploadAdapter from "@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter";
 import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat.js";
 import AutoImage from "@ckeditor/ckeditor5-image/src/autoimage.js";
 import AutoLink from "@ckeditor/ckeditor5-link/src/autolink.js";
 import Autosave from "@ckeditor/ckeditor5-autosave/src/autosave.js";
-import Base64UploadAdapter from "@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter.js";
 import BlockQuote from "@ckeditor/ckeditor5-block-quote/src/blockquote.js";
 import Bold from "@ckeditor/ckeditor5-basic-styles/src/bold.js";
-import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
+import CKFinder from "@ckeditor/ckeditor5-ckfinder/src/ckfinder";
+import EasyImage from "@ckeditor/ckeditor5-easy-image/src/easyimage";
 import Code from "@ckeditor/ckeditor5-basic-styles/src/code.js";
 import CodeBlock from "@ckeditor/ckeditor5-code-block/src/codeblock.js";
 import DataFilter from "@ckeditor/ckeditor5-html-support/src/datafilter.js";
@@ -79,7 +80,6 @@ Editor.builtinPlugins = [
   AutoImage,
   AutoLink,
   Autosave,
-  Base64UploadAdapter,
   UploadAdapter,
   BlockQuote,
   Bold,
