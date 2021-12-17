@@ -1,3 +1,8 @@
+/**
+ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+
 // The editor creator to use.
 import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
 
@@ -25,10 +30,37 @@ import Table from "@ckeditor/ckeditor5-table/src/table";
 import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar";
 import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation";
 
-export default class ClassicEditor extends ClassicEditorBase {}
+// addition
+import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment";
+import Autosave from "@ckeditor/ckeditor5-autosave/src/autosave";
+import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline";
+import Strikethrough from "@ckeditor/ckeditor5-basic-styles/src/strikethrough";
+import Code from "@ckeditor/ckeditor5-basic-styles/src/code";
+import Subscript from "@ckeditor/ckeditor5-basic-styles/src/subscript";
+import Superscript from "@ckeditor/ckeditor5-basic-styles/src/superscript";
+import Clipboard from "@ckeditor/ckeditor5-clipboard/src/clipboard";
+import Font from "@ckeditor/ckeditor5-font/src/font";
+import Highlight from "@ckeditor/ckeditor5-highlight/src/highlight";
+import HorizontalLine from "@ckeditor/ckeditor5-horizontal-line/src/horizontalline";
+import PageBreak from "@ckeditor/ckeditor5-page-break/src/pagebreak";
+import RemoveFormat from "@ckeditor/ckeditor5-remove-format/src/removeformat";
+import StandardEditingMode from "@ckeditor/ckeditor5-restricted-editing/src/standardeditingmode";
+import CodeBlock from "@ckeditor/ckeditor5-code-block/src/codeblock";
+import SpecialCharacters from "@ckeditor/ckeditor5-special-characters/src/specialcharacters";
+import SpecialCharactersEssentials from "@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials";
+import WordCount from "@ckeditor/ckeditor5-word-count/src/wordcount";
+import ImageResize from "@ckeditor/ckeditor5-image/src/imageresize";
+import ImageTextAlternative from "@ckeditor/ckeditor5-image/src/imagetextalternative";
+import SimpleUploadAdapter from "@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter";
+import TableProperties from "@ckeditor/ckeditor5-table/src/tableproperties";
+import TableCellProperties from "@ckeditor/ckeditor5-table/src/tablecellproperties";
+import HtmlEmbed from "@ckeditor/ckeditor5-html-embed/src/htmlembed";
+// import RestrictedEditingMode from '@ckeditor/ckeditor5-restricted-editing/src/restrictededitingmode'
+
+export default class FullEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
-ClassicEditor.builtinPlugins = [
+FullEditor.builtinPlugins = [
   Essentials,
   UploadAdapter,
   Autoformat,
@@ -52,42 +84,104 @@ ClassicEditor.builtinPlugins = [
   Table,
   TableToolbar,
   TextTransformation,
+  Alignment,
+  Autosave,
+  Underline,
+  Strikethrough,
+  Code,
+  Subscript,
+  Superscript,
+  Clipboard,
+  Font,
+  Highlight,
+  HorizontalLine,
+  PageBreak,
+  RemoveFormat,
+  StandardEditingMode,
+  CodeBlock,
+  SpecialCharacters,
+  SpecialCharactersEssentials,
+  WordCount,
+  ImageResize,
+  ImageTextAlternative,
+  SimpleUploadAdapter,
+  TableProperties,
+  TableCellProperties,
+  HtmlEmbed,
 ];
 
 // Editor configuration.
-ClassicEditor.defaultConfig = {
+FullEditor.defaultConfig = {
   toolbar: {
     items: [
-      "heading",
-      "|",
-      "bold",
-      "italic",
-      "link",
-      "bulletedList",
-      "numberedList",
-      "|",
-      "indent",
-      "outdent",
-      "|",
-      "imageUpload",
-      "blockQuote",
-      "insertTable",
-      "mediaEmbed",
       "undo",
       "redo",
+      "heading",
+      "findAndReplace",
+      "blockQuote",
+      "bold",
+      "italic",
+      "strikethrough",
+      "underline",
+      "superscript",
+      "subscript",
+      "specialCharacters",
+      "highlight",
+      "fontFamily",
+      "fontColor",
+      "fontSize",
+      "fontBackgroundColor",
+      "alignment",
+      "outdent",
+      "indent",
+      "numberedList",
+      "todoList",
+      "bulletedList",
+      "link",
+      "mediaEmbed",
+      "imageInsert",
+      "imageUpload",
+      "insertTable",
+    ],
+  },
+  blockToolbar: [
+    "heading",
+    "fontSize",
+    "fontColor",
+    "fontBackgroundColor",
+    "alignment",
+    "|",
+    "bulletedList",
+    "numberedList",
+    "|",
+    "blockQuote",
+    "imageUpload",
+  ],
+  fontSize: {
+    options: [
+      8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 39,
+      40, 42, 44, 46, 48, 50, 62, 64, 66, 68, 70, 72,
     ],
   },
   image: {
     toolbar: [
+      "imageStyle:alignLeft",
       "imageStyle:full",
-      "imageStyle:side",
+      "imageStyle:alignRight",
       "|",
       "imageTextAlternative",
     ],
+    styles: ["full", "side", "alignLeft", "alignCenter", "alignRight"],
   },
   table: {
-    contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
+    contentToolbar: [
+      "tableColumn",
+      "tableRow",
+      "mergeTableCells",
+      "tableProperties",
+      "tableCellProperties",
+    ],
   },
   // This value must be kept in sync with the language defined in webpack.config.js.
-  language: "en",
+  language: "id",
 };
